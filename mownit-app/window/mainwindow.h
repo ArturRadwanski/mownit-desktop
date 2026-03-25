@@ -6,6 +6,7 @@
 #define UNTITLE_MAINWINDOW_H
 
 #include <QMainWindow>
+#include "../PointsModel.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -22,10 +23,24 @@ class MainWindow : public QMainWindow {
 public:
     explicit MainWindow(QWidget *parent = nullptr);
 
+    void updatePlot();
+
     ~MainWindow() override;
 
+private slots:
+    void on_drawButton_clicked();
+    void on_addButton_clicked();
+
 private:
+    PointsModel *model;
     Ui::MainWindow *ui;
+    double start;
+    double end;
+    double step;
+    double maxX;
+    double minX;
+    double maxY;
+    double minY;
 };
 
 
