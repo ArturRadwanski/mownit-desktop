@@ -117,11 +117,21 @@ void MainWindow::updatePlot() {
             maxY = std::max(maxY, yGraph.last());
         }
     }
-    else {
+    else if (ui->newtonRadio->isChecked()){
         auto a = calculateNewtonCoefficients(controlPoints);
         for (double x = minX; x <= maxX; x += step) {
             xGraph << x;
             yGraph << calculateNewton(x, controlPoints, a);
+            minY = std::min(minY, yGraph.last());
+            maxY = std::max(maxY, yGraph.last());
+        }
+    }
+    else {
+        QVector<HermitePoint> hermitePoints = pointsToHermitePoints(controlPoints);
+        auto a = calculateHermiteCoefficients(hermitePoints);
+        for (double x = minX; x<=maxX; x+=step) {
+            xGraph << x;
+            yGraph << calculateHermiteValue(x, hermitePoints, a);
             minY = std::min(minY, yGraph.last());
             maxY = std::max(maxY, yGraph.last());
         }

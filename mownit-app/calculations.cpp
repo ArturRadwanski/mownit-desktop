@@ -4,6 +4,73 @@
 #include <QVector>
 #include <QPointF>
 
+constexpr double h = 1e-14;
+struct HermitePoint {
+    double x;
+    double y;
+    double dy; // wartość pochodnej f'(x)
+
+    HermitePoint(double _x = 0, double _y = 0, double _dy = 0)
+        : x(_x), y(_y), dy(_dy) {}
+};
+
+double givenFunction(const double x) {
+    return -2 * x * sin(2*(x-1));
+}
+double givenDifferential(const double x) {
+    return -2 * (sin(2*(x-1)) + x * 2 * cos(2*(x-1)));
+}
+
+QVector<double> calculateHermiteCoefficients(const QVector<HermitePoint>& points) {
+    int n = points.size();
+    int m = 2 * n;
+    QVector<double> z(m);
+    QVector<QVector<double>> table(m, QVector<double>(m));
+    for (int i = 0; i < n; ++i) {
+        z[2 * i] = points[i].x;
+        z[2 * i + 1] = points[i].x;
+        table[2 * i][0] = points[i].y;
+        table[2 * i + 1][0] = points[i].y;
+
+        table[2 * i + 1][1] = points[i].dy;
+        if (i > 0) {
+            table[2 * i][1] = (table[2 * i][0] - table[2 * i - 1][0]) / (z[2 * i] - z[2 * i - 1]);
+        }
+    }
+
+    for (int j = 2; j < m; ++j) {
+        for (int i = j; i < m; ++i) {
+            table[i][j] = (table[i][j - 1] - table[i - 1][j - 1]) / (z[i] - z[i - j]);
+        }
+    }
+    QVector<double> a;
+    for (int i = 0; i < m; ++i) {
+        a.append(table[i][i]);
+    }
+    return a;
+}
+
+QVector<HermitePoint> pointsToHermitePoints(const QVector<QPointF>& points) {
+    QVector<HermitePoint> result;
+    foreach (const QPointF& point, points) {
+        const double dy = givenDifferential(point.x());
+        result.append(HermitePoint(point.x(), point.y(), dy));
+    }
+    return result;
+}
+
+double calculateHermiteValue(double x, const QVector<HermitePoint>& points, const QVector<double>& a) {
+    int n = points.size();
+    int m = 2 * n;
+    double result = a[m - 1];
+
+    for (int i = m - 2; i >= 0; --i) {
+        // z[i] to points[i/2].x
+        double zi = points[i / 2].x;
+        result = a[i] + (x - zi) * result;
+    }
+    return result;
+}
 
 QVector<double> calculateNewtonCoefficients(const QVector<QPointF>& points) {
     int n = points.size();
@@ -53,9 +120,7 @@ double calculateLagrange(double x, const QVector<QPointF>& points) {
     return result;
 }
 
-double givenFunction(const double x) {
-    return -2 * x * sin(2*(x-1));
-}
+
 /*
  *@param n - ile miejsc zerowych zwrócić
  *@param k - stopień wielomianu czebyszewa
