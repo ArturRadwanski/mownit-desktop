@@ -29,7 +29,7 @@ double calculateNewton(double x, const std::vector<std::tuple<double, double>>& 
     if (n == 0) return 0.0;
     double result = a[n - 1];
     for (int i = n - 2; i >= 0; --i) {
-        result = result * (x - std::get<0>(points[i])) / (1.0) + a[i];
+        result = result * (x - std::get<0>(points[i])) + a[i];
     }
     return result;
 }
@@ -55,7 +55,7 @@ double calculateLagrange(double x, const std::vector<std::tuple<double, double>>
 }
 
 double givenFunction(const double x) {
-    return -2 * x * sin(x-1);
+    return -2 * x * sin(2*(x-1));
 }
 /*
  *@param n - ile miejsc zerowych zwrócić
@@ -67,8 +67,8 @@ double* chebyshev(const int n, const int k, const double a, const double b) {
     double *result = new double[n];
     double length = b - a;
     for (int j = 0; j < n; ++j) {
-        double i = j;
-        double x = cos((((2*i) - 1) / 2 * k) * M_PI);
+        const double i = j + 1;
+        double x = cos((((2*i) - 1) / (2 * k)) * M_PI);
         x+=1;
         x*=length/2;
         x+=a;

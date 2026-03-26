@@ -16,6 +16,8 @@ find_package(Qt6 COMPONENTS
         PrintSupport
         REQUIRED)
 
+
+
 add_executable(main main.cpp
         main.cpp
         window/mainwindow.cpp
@@ -25,24 +27,22 @@ add_executable(main main.cpp
         qcustomplot-source/qcustomplot.cpp
         PointsModel.cpp
         PointsModel.h
-        calculation_no_qt.cpp
+)
+target_link_libraries(main
+        Qt::Core
+        Qt::Gui
+        Qt::Widgets
+        Qt::PrintSupport
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qcustomplot-source)
 
-list(APPEND CMAKE_PREFIX_PATH "/usr/lib/qt6")
-find_package(Qt6 COMPONENTS
-        Core
-        Gui
-        Widgets
-        PrintSupport
-        REQUIRED)
 
-add_executable(obliczenia testy.cpp
-testy.cpp
-        calculation_no_qt.cpp)
 
-target_link_libraries(main
+add_executable(obliczenia
+        tests_main.cpp)
+
+target_link_libraries(obliczenia
         Qt::Core
         Qt::Gui
         Qt::Widgets

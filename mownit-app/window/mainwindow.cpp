@@ -18,18 +18,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->plotterWidget->addGraph(); // punkty kontrolne
     ui->plotterWidget->addGraph(); // zadana funkcja
 
-    ui->plotterWidget->graph(0)->setPen(QPen(Qt::blue)); // Niebieska linia
+    ui->plotterWidget->graph(0)->setPen(QPen(Qt::red)); // Niebieska linia
 
     ui->plotterWidget->graph(1)->setLineStyle(QCPGraph::lsNone); // Brak linii dla punktów
     ui->plotterWidget->graph(1)->setScatterStyle(QCPScatterStyle::ssCircle);
     //connect(model, &PointsModel::dataChanged, this, &MainWindow::updatePlot);
     start = -2 * M_PI + 1;
     end = 3 * M_PI +1;
-    step = (end - start) / 100;
+    step = (end - start) / 99;
     minX = start;
     maxX = end;
     minY = start;
     maxY = start;
+
+
     QVector<double> xGraph, yGraph;
     for (int i=0;i<100;i++) {
         xGraph << start + (i * step);
@@ -44,6 +46,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->plotterWidget->yAxis->setRange(minY - 2, maxY + 2);
 
     ui->plotterWidget->graph(2)->setData(xGraph, yGraph);
+    ui->plotterWidget->legend->setVisible(true);
+
+    ui->plotterWidget->legend->setFont(QFont("Helvetica", 9));
+    ui->plotterWidget->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignLeft | Qt::AlignBottom);
+
+
+    ui->plotterWidget->graph(0)->setName("Interpolacja");
+    ui->plotterWidget->graph(1)->setName("Węzły");
+    ui->plotterWidget->graph(2)->setName("Funkcja bazowa");
     ui->plotterWidget->replot();
 
 }
@@ -51,6 +62,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 void MainWindow::on_drawButton_clicked() {
     printf("click\n");
     this->updatePlot();
+    ui->plotterWidget->savePng("wykres.png",800,600);
 }
 
 void MainWindow::on_addButton_clicked() {
@@ -60,11 +72,22 @@ void MainWindow::on_addButton_clicked() {
 void MainWindow::updatePlot() {
     if (ui->formulaRadio ->isChecked()) {
         QVector<QPointF> *points = new QVector<QPointF>();
+        int n = 15;
+        double step = (maxX - minX) / (n - 1);
 
-        for (int i=0;i<10;i++) {
-            QPointF *point = new QPointF(i, givenFunction(start + (i * step)));
-            points->append(*point);
-            delete point;
+            if (ui -> chebyshevRadio->isChecked()) {
+                QVector<double> zeros = chebyshev(n, n, start, end);
+                foreach (double x, zeros) {
+                    points->append(QPointF(x, givenFunction(x)));
+                }
+            }
+            else {
+                for (int i=0;i<n;i++) {
+                QPointF *point = new QPointF(start + (i * step), givenFunction(start + (i * step)));
+                points->append(*point);
+                delete point;
+            }
+
         }
         model->newPoints(*points);
         delete points;
@@ -83,7 +106,8 @@ void MainWindow::updatePlot() {
         yDots << p.y();
     }
 
-
+    minY=0;
+    maxY=0;
     double step = (maxX - minX) / 500.0;
     if (ui->lagrangeRadio->isChecked()) {
         for (double x = minX; x <= maxX; x += step) {

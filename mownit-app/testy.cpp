@@ -1,9 +1,15 @@
 //
 // Created by valleron on 3/19/26.
 //
-#include "calculations.cpp"
-#include <math.h>
+#include "calculation_no_qt.cpp"
+#include <cmath>
 #include <tuple>
+#include <vector>
+#include <iostream>
+
+constexpr double check_step = ((3 * M_PI +1) - (-2 * M_PI + 1)) / 999;
+constexpr double start = -2 * M_PI + 1;
+constexpr double end = 3 * M_PI +1;
 
 double square_error(const double *estimated, const double *expected, const int n) {
     double sum = 0.0;
@@ -21,25 +27,71 @@ double maximum_error(const double *estimated, const double *expected, const int 
     return maximum;
 }
 
-std::tuple<double,double>* sample_interpolation_points(double* points, int n) {
-    auto result = new std::tuple<double, double>[n];
+std::vector<std::tuple<double,double>> sample_interpolation_points(double* points, int n) {
+    std::vector<std::tuple<double,double>> result = {};
     for (int i=0;i<n;i++) {
-        result[i] = std::make_tuple(points[i], givenFunction(points[i]));
+        result.emplace_back(points[i], givenFunction(points[i]));
     }
     return result;
 }
 
 
-void calc_interpolations() {
-    int n = 100;
-    double start = -2 * M_PI + 1;
-    double end = 3 * M_PI +1 ;
-    //czebyszew:
+void calcInterpolations(const int n) {
+
     for (int i=1;i<n;i++) {
         double *chebyshevZeros = chebyshev(i, i, start, end);
-        auto points = sample_interpolation_points(chebyshevZeros, i);
-        delete chebyshevZeros;
-        delete points;
+        auto chebyshevPoints = sample_interpolation_points(chebyshevZeros, i);
+
+        auto *evenPoints = new double[i];
+        const double step = (end - start) / (i - 1);
+        for (int j=0;j<i;j++) {
+            evenPoints[j] = start + step * j;
+        }
+
+        auto evenInterpolationPoints = sample_interpolation_points(evenPoints, i);
+
+        auto *estimated = new double[1000];
+        auto *newtonEven = new double[1000];
+        auto *newtonChebyshev = new double[1000];
+        auto *lagrangianEven = new double[1000];
+        auto *lagrangianChebyshev = new double[1000];
+        auto chebyshevCoefficients = calculateNewtonCoefficients(chebyshevPoints);
+        auto evenCoefficients = calculateNewtonCoefficients(evenInterpolationPoints);
+        for (int j=0;j<1000;j++) {
+            const double x = start + j * check_step;
+            estimated[j] = givenFunction(x);
+            newtonEven[j] = calculateNewton(x,evenInterpolationPoints, evenCoefficients);
+            newtonChebyshev[j] = calculateNewton(x, chebyshevPoints, chebyshevCoefficients);
+            lagrangianEven[j] = calculateLagrange(x, evenInterpolationPoints);
+            lagrangianChebyshev[j] = calculateLagrange(x, chebyshevPoints);
+        }
+
+        const double newtonEvenSquare = square_error(estimated, newtonEven, 1000);
+        const double newtonEvenMax = maximum_error(estimated, newtonEven, 1000);
+        const double newtonChebyshevSquare = square_error(estimated, newtonChebyshev, 1000);
+        const double newtonChebyshevMax = maximum_error(estimated, newtonChebyshev, 1000);
+        const double lagrangeEvenSquare = square_error(estimated, lagrangianEven, 1000);
+        const double lagrangeEvenMax = maximum_error(estimated, lagrangianEven, 1000);
+        const double lagrangeChebyshevSquare = square_error(estimated, lagrangianChebyshev, 1000);
+        const double lagrangeChebyshevMax = maximum_error(estimated, lagrangianChebyshev, 1000);
+
+        std::cout << "--------------------------------------\n" << "n = " << i << std::endl;
+        std::cout << "newtonEvenSquare = " << newtonEvenSquare << "\n";
+        std::cout << "newtonEvenMax = " << newtonEvenMax << "\n";
+        std::cout << "newtonChebyshevSquare = " << newtonChebyshevSquare << "\n";
+        std::cout << "newtonChebyshevMax = " << newtonChebyshevMax << "\n";
+        std::cout << "lagrangeEvenSquare = " << lagrangeEvenSquare << "\n";
+        std::cout << "lagrangeEvenMax = " << lagrangeEvenMax << "\n";
+        std::cout << "lagrangeChebyshevSquare = " << lagrangeChebyshevSquare << "\n";
+        std::cout << "lagrangeChebyshevMax = " << lagrangeChebyshevMax << std::endl;
+        delete[] chebyshevZeros;
+        delete[] estimated;
+        delete[] newtonEven;
+        delete[] newtonChebyshev;
+        delete[] lagrangianEven;
+        delete[] lagrangianChebyshev;
+        delete[] evenPoints;
+
     }
 
 }

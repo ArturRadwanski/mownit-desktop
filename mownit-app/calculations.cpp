@@ -28,7 +28,7 @@ double calculateNewton(double x, const QVector<QPointF>& points, const QVector<d
     if (n == 0) return 0.0;
     double result = a[n - 1];
     for (int i = n - 2; i >= 0; --i) {
-        result = result * (x - points[i].x()) / (1.0) + a[i];
+        result = result * (x - points[i].x()) + a[i];
     }
     return result;
 }
@@ -54,7 +54,7 @@ double calculateLagrange(double x, const QVector<QPointF>& points) {
 }
 
 double givenFunction(const double x) {
-    return -2 * x * sin(x-1);
+    return -2 * x * sin(2*(x-1));
 }
 /*
  *@param n - ile miejsc zerowych zwrócić
@@ -62,16 +62,16 @@ double givenFunction(const double x) {
  *@param a - koniec przedziału
  *@param b - koniec przedziału
  */
-double* chebyshev(const int n, const int k, const double a, const double b) {
-    double *result = new double[n];
+QVector<double> chebyshev(const int n, const int k, const double a, const double b) {
+    QVector<double> result;
     double length = b - a;
     for (int j = 0; j < n; ++j) {
-        double i = j;
-        double x = cos((((2*i) - 1) / 2 * k) * M_PI);
+        const double i = j + 1;
+        double x = cos((((2*i) - 1) / (2 * k)) * M_PI);
         x+=1;
         x*=length/2;
         x+=a;
-        result[j] = x;
+        result.append(x);
     }
     return result;
 
