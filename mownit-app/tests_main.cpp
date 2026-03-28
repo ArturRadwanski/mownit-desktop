@@ -5,6 +5,6 @@
 #include "testy.cpp"
 
 int main() {
-    calcInterpolations(81);
+    calcInterpolations(20);
     return 0;
 }

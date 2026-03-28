@@ -72,7 +72,7 @@ void MainWindow::on_addButton_clicked() {
 void MainWindow::updatePlot() {
     if (ui->formulaRadio ->isChecked()) {
         QVector<QPointF> *points = new QVector<QPointF>();
-        int n = 15;
+        int n = 25;
         double step = (maxX - minX) / (n - 1);
 
             if (ui -> chebyshevRadio->isChecked()) {
