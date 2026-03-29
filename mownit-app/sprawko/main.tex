@@ -33,11 +33,11 @@
 \subsection{Cel}
 Celem zadania było zbadanie jak rozmieszczenie węzłów interpolacji wpływa na dokładność przybliżenia oraz porównanie podejścia Lagrange'a oraz metody ilorazów różnicowych
 na podstawie funkcji 
-\begin{center}
-\begin{large}
-    $f(x) = -2x\sin(2(x-1))$\hspace{5ex}  $x\in[-2\pi+1,3\pi+1]$
-\end{large}
-\end{center}
+% \begin{center}
+% \begin{large}
+    \[f(x) = -2x\sin(2(x-1))\hspace{5ex}  x\in[-2\pi+1,3\pi+1]\]
+% \end{large}
+% \end{center}
 
 \subsection{Realizacja}
 
@@ -61,19 +61,19 @@ W celu zbadania właściwości numerycznych wybranych metod interpolacji, zaimpl
         \item \textbf{Błąd kwadratowy ($E_{sqr}$):} dający obraz ogólnego dopasowania funkcji na całym przedziale.
         
         \begin{center}
-        \begin{LARGE}
-            $E_{sqr} = \frac{\sqrt{\sum_{i}^{k}(P(x_{i}) - f(x_{i}))^{2}}}{k}$
-        \end{LARGE}
+        \begin{Large}
+            \[E_{sqr} = \frac{\sqrt{\sum_{i}^{k}(P(x_{i}) - f(x_{i}))^{2}}}{k}\]
+        \end{Large}
         \end{center}  
         
         
         Gdzie $P(x)$ to wielomian interpolujący, a $x_{i}$ to kolejne punkty kontrolne 
-        \item \textbf{Błąd maksymalny ($E_{max}$):} kluczowy dla zaobserwowania oscylacji brzegowych (efektu Rungego).
+        \item \textbf{Błąd maksymalny ($E_{max}$):} służy głównie do zaobserwowania oscylacji brzegowych (efektu Rungego).
         
         \begin{center}
-        \begin{LARGE}
-            $E_{max}=\max_{i\in[1,k]}(x_{i})$
-        \end{LARGE}
+        \begin{Large}
+            \[E_{max}=\max_{i\in[1,k]}(x_{i})\]
+        \end{Large}
         \end{center}
         
         Gdzie $x_{i}$ to kolejne punkty kontrolne
@@ -139,9 +139,9 @@ co wielomian interpolujący jest tożsamościowo równy zero.
 
 Na podstawie danych z (Tab. \ref{tab:max_error} i \ref{tab:mse_error}) zaobserwowano efekt Rungego dla
 węzłów równoodległych. Zjawisko to, polegające na gwałtownych oscylacjach wielomianu przy krańcach przedziału, zaczęło być widoczne od $n=9$ osiągnęło swoje
-apogeum dla $n=15$, gdzie błąd maksymalny wyniósł aż $E_{max} \approx 576,22$, po czym zaczęło stopniowo zanikać. 
+apogeum dla $n=15$, gdzie błąd maksymalny wyniósł aż $E_{max} \approx 576,22$, po czym zaczął stopniowo zanikać. 
 
-Tak wysoka wartość błędu świadczy o gwałtownych oscylacjach przybliżenia funkcji w obszarach brzegowych przy zastosowaniu równomiernego
+Tak wysoka wartość jest efektem gwałtownych oscylacji przybliżenia funkcji w obszarach brzegowych przy zastosowaniu równomiernego
 rozkładu punktów. Warto zauważyć, że dla niskich rzędów ($n < 8$) błędy obu metod były zbliżone, jednak powyżej tej granicy błąd dla węzłów równoodległych zaczął
 gwałtownie rosnąć.
 
@@ -165,8 +165,9 @@ generują błąd na poziomie $0,33$.
     \label{fig:runge25}
 \end{figure}    
 
-W rysunkach \ref{fig:runge20} i \ref{fig:runge25} pokazano jak efekt Rungego zanika dla funkcji f dla wyższych stopni wielomianu $n>=15$. Jest to zachowanie
-typowe dla funkcji których szereg Maclurina ma promień zbieżności $R=\infty$ (czyli \[\lim _{n \to \infty}\])
+W rysunkach \ref{fig:runge20} i \ref{fig:runge25} pokazano jak efekt Rungego zanika dla funkcji f dla wyższych stopni wielomianu $n>=15$.
+Dzieje się tak, ponieważ maksymalna wartość \(n\)-tej pochodnej badanej funkcji rośnie na zadanym przedziale wolniej \(n!\), przez co w miarę jak
+n zmierza do nieskończoności, to górna granica błędu maksymalnego dąży do 0.
 
 \begin{figure}[H]
     \centering
