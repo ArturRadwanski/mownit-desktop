@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.8)  9 APR 2026 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.8)  9 APR 2026 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/zad2b/sprawko.tex
-(/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/zad2b/sprawko.tex
+**/home/valleron/Documents/AGH/mownit-desktop/mownit-app/zad2b/sprawko.tex
+(/home/valleron/Documents/AGH/mownit-desktop/mownit-app/zad2b/sprawko.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -787,31 +787,32 @@ Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty p
 ) (./tex/01_title_page.tex)) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count382
-) (build/sprawko.aux)
+) (build/sprawko.aux
+Package babel Info: 'polish' activates 'polish' shorthands.
+(babel)             Reported on input line 8.
+)
 \openout1 = `sprawko.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-Package babel Info: 'polish' activates 'polish' shorthands.
-(babel)             Reported on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count383
@@ -860,11 +861,12 @@ Package babel Info: 'polish' activates 'polish' shorthands.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 10.
+Package hyperref Info: Link coloring OFF on input line 9.
+(build/sprawko.out) (build/sprawko.out)
 \@outlinefile=\write4
 \openout4 = `sprawko.out'.
 
-(/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+ (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
  (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
 Package: pdflscape-nometadata 2025-06-23 v0.14 Display of landscape pages in PDF (HO)
@@ -873,47 +875,106 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 \c@lstlisting=\count389
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-Package epstopdf Info: Source file: <img/agh_logo_z_nazwa.eps>
-(epstopdf)                    date: 2026-03-26 07:54:50
-(epstopdf)                    size: 304475 bytes
-(epstopdf)             Output file: <img/agh_logo_z_nazwa-eps-converted-to.pdf>
-(epstopdf)                    date: 2026-03-26 08:55:51
-(epstopdf)                    size: 9231 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/agh_logo_z_nazwa-eps-converted-to.pdf img/agh_logo_z_nazwa.eps>
-(epstopdf)             \includegraphics on input line 12.
-Package epstopdf Info: Output file is already uptodate.
-<img/agh_logo_z_nazwa-eps-converted-to.pdf, id=4, 323.2075pt x 107.40125pt>
+<img/agh_logo_z_nazwa-eps-converted-to.pdf, id=40, 323.2075pt x 107.40125pt>
 File: img/agh_logo_z_nazwa-eps-converted-to.pdf Graphic file (type pdf)
 <use img/agh_logo_z_nazwa-eps-converted-to.pdf>
-Package pdftex.def Info: img/agh_logo_z_nazwa-eps-converted-to.pdf  used on input line 12.
+Package pdftex.def Info: img/agh_logo_z_nazwa-eps-converted-to.pdf  used on input line 11.
 (pdftex.def)             Requested size: 321.09592pt x 106.69783pt.
-LaTeX Font Info:    Trying to load font information for OT4+phv on input line 12.
-LaTeX Font Info:    No file OT4phv.fd. on input line 12.
+LaTeX Font Info:    Trying to load font information for OT4+phv on input line 11.
+LaTeX Font Info:    No file OT4phv.fd. on input line 11.
 
 
 LaTeX Font Warning: Font shape `OT4/phv/m/n' undefined
-(Font)              using `OT4/cmr/m/n' instead on input line 12.
+(Font)              using `OT4/cmr/m/n' instead on input line 11.
 
 
 LaTeX Font Warning: Font shape `OT4/phv/b/n' undefined
-(Font)              using `OT4/phv/m/n' instead on input line 12.
+(Font)              using `OT4/phv/m/n' instead on input line 11.
 
 [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc} <./img/agh_logo_z_nazwa-eps-converted-to.pdf>])
-! Emergency stop.
-<*> ...esktop/mownit-app/sprawko/zad2b/sprawko.tex
-                                                  
-*** (job aborted, no legal \end found)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc} <./img/agh_logo_z_nazwa-eps-converted-to.pdf>]
+LaTeX Font Info:    Trying to load font information for OML+plm on input line 32.
+ (/usr/share/texmf-dist/tex/latex/polski/omlplm.fd
+File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 32.
+ (/usr/share/texmf-dist/tex/latex/polski/omsplsy.fd
+File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Trying to load font information for OMX+plex on input line 32.
+ (/usr/share/texmf-dist/tex/latex/polski/omxplex.fd
+File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10> on input line 32.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <7> on input line 32.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <5> on input line 32.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <14.4> on input line 59.
 
- 
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.59 ...um_{i}^{k}(P(x_{i}) - f(x_{i}))^{2}}}{k}\]
+                                                   [1{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc}] [2{/usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc}] [3]
+<img/n11Lagrange.png, id=80, 602.25pt x 451.6875pt>
+File: img/n11Lagrange.png Graphic file (type png)
+<use img/n11Lagrange.png>
+Package pdftex.def Info: img/n11Lagrange.png  used on input line 153.
+(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <8> on input line 154.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <6> on input line 154.
+<img/n11Hermite.png, id=82, 602.25pt x 451.6875pt>
+File: img/n11Hermite.png Graphic file (type png)
+<use img/n11Hermite.png>
+Package pdftex.def Info: img/n11Hermite.png  used on input line 160.
+(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
+<img/n6Hermite.png, id=83, 602.25pt x 451.6875pt>
+File: img/n6Hermite.png Graphic file (type png)
+<use img/n6Hermite.png>
+Package pdftex.def Info: img/n6Hermite.png  used on input line 167.
+(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
+
+
+LaTeX Warning: Reference `' on page 4 undefined on input line 177.
+
+[4 <./img/n11Lagrange.png>] [5 <./img/n11Hermite.png> <./img/n6Hermite.png>] [6]
+runsystem(latexminted cleantemp  --timestamp 20260409145333 3D9010D8C5E9B9BA0C57D5DEEF5EE839)...executed safely (allowed).
+
+ (build/sprawko.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `sprawko.out' has not changed.
+(rerunfilecheck)             Checksum: 14C0719E6CD6207D92E50C6E2A4E8900;1259.
+ ) 
 Here is how much of TeX's memory you used:
- 20603 strings out of 469480
- 383671 string characters out of 5470004
- 927321 words of memory out of 5000000
- 48978 multiletter control sequences out of 15000+600000
- 633056 words of font info for 51 fonts, out of 8000000 for 9000
+ 20773 strings out of 469480
+ 386681 string characters out of 5470004
+ 946323 words of memory out of 5000000
+ 49090 multiletter control sequences out of 15000+600000
+ 639203 words of font info for 68 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 80i,5n,86p,572b,538s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 80i,9n,86p,564b,773s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on build/sprawko.pdf (7 pages, 213047 bytes).
+PDF statistics:
+ 178 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+

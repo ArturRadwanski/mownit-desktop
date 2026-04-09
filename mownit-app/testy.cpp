@@ -118,3 +118,70 @@ void calcInterpolations(const int n) {
 
 }
 
+void calcInterpolationsHermite(const int n) {
+    const double check_step = (end - start) / 999.0;
+
+    for (int i = 2; i <= n; i++) { // n to liczba węzłów
+        double *chebyshevZeros = chebyshev(i, i, start, end);
+        auto *evenPoints = new double[i];
+        const double step = (end - start) / (i - 1);
+        for (int j = 0; j < i; j++) {
+            evenPoints[j] = start + step * j;
+        }
+
+        auto chebyshevPointsLagrange = sample_interpolation_points(chebyshevZeros, i);
+        auto evenPointsLagrange = sample_interpolation_points(evenPoints, i);
+
+        std::vector<HermitePoint> chebyshevPointsHermite;
+        std::vector<HermitePoint> evenPointsHermite;
+        for (int j = 0; j < i; j++) {
+            double xC = chebyshevZeros[j];
+            double xE = evenPoints[j];
+            chebyshevPointsHermite.emplace_back(xC, givenFunction(xC), givenDifferential(xC));
+            evenPointsHermite.emplace_back(xE, givenFunction(xE), givenDifferential(xE));
+        }
+
+        auto hermiteEvenCoeffs = calculateHermiteCoefficients(evenPointsHermite);
+        auto hermiteCzebCoeffs = calculateHermiteCoefficients(chebyshevPointsHermite);
+
+        auto *estimated = new double[1000];
+        auto *hermiteEven = new double[1000];
+        auto *hermiteCzeb = new double[1000];
+        auto *lagrangeEven = new double[1000];
+        auto *lagrangeCzeb = new double[1000];
+
+        for (int j = 0; j < 1000; j++) {
+            const double x = start + j * check_step;
+            estimated[j] = givenFunction(x);
+
+            // Obliczenia wartości
+            hermiteEven[j] = calculateHermiteValue(x, evenPointsHermite, hermiteEvenCoeffs);
+            hermiteCzeb[j] = calculateHermiteValue(x, chebyshevPointsHermite, hermiteCzebCoeffs);
+            lagrangeEven[j] = calculateLagrange(x, evenPointsLagrange);
+            lagrangeCzeb[j] = calculateLagrange(x, chebyshevPointsLagrange);
+        }
+
+        // 6. Obliczanie błędów
+        std::cout << "--------------------------------------\n" << "Liczba wezlow (n) = " << i << std::endl;
+
+        // Wyniki dla węzłów równoodległych
+        std::cout << "[Rownoodlegle]\n";
+        std::cout << "  Lagrange MSE: " << square_error(estimated, lagrangeEven, 1000) << " MAX: " << maximum_error(estimated, lagrangeEven, 1000) << "\n";
+        std::cout << "  Hermite  MSE: " << square_error(estimated, hermiteEven, 1000) << " MAX: " << maximum_error(estimated, hermiteEven, 1000) << "\n";
+
+        // Wyniki dla węzłów Czebyszewa
+        std::cout << "[Czebyszew]\n";
+        std::cout << "  Lagrange MSE: " << square_error(estimated, lagrangeCzeb, 1000) << " MAX: " << maximum_error(estimated, lagrangeCzeb, 1000) << "\n";
+        std::cout << "  Hermite  MSE: " << square_error(estimated, hermiteCzeb, 1000) << " MAX: " << maximum_error(estimated, hermiteCzeb, 1000) << "\n";
+
+        // Sprzątanie
+        delete[] chebyshevZeros;
+        delete[] evenPoints;
+        delete[] estimated;
+        delete[] hermiteEven;
+        delete[] hermiteCzeb;
+        delete[] lagrangeEven;
+        delete[] lagrangeCzeb;
+    }
+}
+

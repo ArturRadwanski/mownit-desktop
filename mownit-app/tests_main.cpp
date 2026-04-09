@@ -5,6 +5,6 @@
 #include "testy.cpp"
 
 int main() {
-    calcInterpolations(20);
+    calcInterpolationsHermite(90);
     return 0;
 }

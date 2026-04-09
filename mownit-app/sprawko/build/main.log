@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  29 MAR 2026 03:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.8)  9 APR 2026 13:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -876,10 +876,10 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package epstopdf Info: Source file: <img/agh_logo_z_nazwa.eps>
-(epstopdf)                    date: 2026-03-26 07:54:50
+(epstopdf)                    date: 2026-04-09 13:17:21
 (epstopdf)                    size: 304475 bytes
 (epstopdf)             Output file: <img/agh_logo_z_nazwa-eps-converted-to.pdf>
-(epstopdf)                    date: 2026-03-26 08:55:51
+(epstopdf)                    date: 2026-04-09 13:17:21
 (epstopdf)                    size: 9231 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/agh_logo_z_nazwa-eps-converted-to.pdf img/agh_logo_z_nazwa.eps>
 (epstopdf)             \includegraphics on input line 12.
@@ -969,7 +969,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 186.
 
 [5 <./img/rownomierne.png> <./img/czebyszew.png>] [6] [7]
-runsystem(latexminted cleantemp  --timestamp 20260329031443 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+runsystem(latexminted cleantemp  --timestamp 20260409131727 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
 
  (build/main.aux)
  ***********
@@ -985,7 +985,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  20796 strings out of 469480
- 386792 string characters out of 5470003
+ 386792 string characters out of 5470004
  945315 words of memory out of 5000000
  49103 multiletter control sequences out of 15000+600000
  639864 words of font info for 70 fonts, out of 8000000 for 9000
