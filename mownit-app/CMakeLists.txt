@@ -27,6 +27,7 @@ add_executable(main main.cpp
         qcustomplot-source/qcustomplot.cpp
         PointsModel.cpp
         PointsModel.h
+        qcustomplot-source/interpolationDrawing.cpp
 )
 target_link_libraries(main
         Qt::Core
@@ -40,13 +41,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qcustomplot-source)
 
 
 add_executable(obliczenia
-        tests_main.cpp)
-
-target_link_libraries(obliczenia
-        Qt::Core
-        Qt::Gui
-        Qt::Widgets
-        Qt::PrintSupport
+        tests_main.cpp
 )
 
 

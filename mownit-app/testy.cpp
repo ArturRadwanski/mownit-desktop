@@ -11,6 +11,12 @@ constexpr double check_step = ((3 * M_PI +1) - (-2 * M_PI + 1)) / 999;
 constexpr double start = -2 * M_PI + 1;
 constexpr double end = 3 * M_PI +1;
 
+/*Oblicza błąd kwadratowy
+ *@param estimated - wskaźnik do tablicy wartości interpolacji w n punktach
+ *@param expected - wskaźnik do tablicy wartości oczekiwanych w n punktach
+ *@param n - liczba punktów do sprawdzenia
+ *@return błąd kwadratowy dla danego przybliżenia
+ */
 double square_error(const double *estimated, const double *expected, const int n) {
     double sum = 0.0;
     for (int i=0;i<n;i++) {
@@ -19,6 +25,13 @@ double square_error(const double *estimated, const double *expected, const int n
     return sqrt(sum) / n;
 
 }
+
+/*Oblicza błąd maksymalny
+*@param estimated - wskaźnik do tablicy wartości interpolacji w n punktach
+*@param expected - wskaźnik do tablicy wartości oczekiwanych w n punktach
+*@param n - liczba punktów do sprawdzenia
+*@return błąd maksymalny dla danego przybliżenia
+*/
 double maximum_error(const double *estimated, const double *expected, const int n) {
     double maximum = 0.0;
     for (int i=0;i<n;i++) {
@@ -27,6 +40,12 @@ double maximum_error(const double *estimated, const double *expected, const int 
     return maximum;
 }
 
+
+/*Tworzy listę węzłów interpolacji
+ *@param points - wskaźnik do listy współrzędnych x interpolaji
+ *@param n - liczba węzłów interpolacji
+ *@return wektor węzłów interpolacji
+ */
 std::vector<std::tuple<double,double>> sample_interpolation_points(double* points, int n) {
     std::vector<std::tuple<double,double>> result = {};
     for (int i=0;i<n;i++) {
@@ -35,7 +54,10 @@ std::vector<std::tuple<double,double>> sample_interpolation_points(double* point
     return result;
 }
 
-
+/*Funkcja tworząca interpolacje mające od 1 do n węzłów i wypisująca błąd kwadratowy oraz maksymalny dla rozkladu węzłów jednostajnego
+ *oraz zgodnego z miejscami zerowymi wielomianu czebyszewa
+ *@param n - maksymalna liczba węzłów dla których robić test
+ */
 void calcInterpolations(const int n) {
 
     for (int i=1;i<n;i++) {

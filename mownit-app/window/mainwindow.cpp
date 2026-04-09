@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->plotterWidget->addGraph(); // punkty kontrolne
     ui->plotterWidget->addGraph(); // zadana funkcja
 
-    ui->plotterWidget->graph(0)->setPen(QPen(Qt::red)); // Niebieska linia
+    ui->plotterWidget->graph(0)->setPen(QPen(Qt::red));
 
     ui->plotterWidget->graph(1)->setLineStyle(QCPGraph::lsNone); // Brak linii dla punktów
     ui->plotterWidget->graph(1)->setScatterStyle(QCPScatterStyle::ssCircle);
@@ -30,7 +30,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     maxX = end;
     minY = start;
     maxY = start;
-
 
     QVector<double> xGraph, yGraph;
     for (int i=0;i<100;i++) {
@@ -72,7 +71,7 @@ void MainWindow::on_addButton_clicked() {
 void MainWindow::updatePlot() {
     if (ui->formulaRadio ->isChecked()) {
         QVector<QPointF> *points = new QVector<QPointF>();
-        int n = 15;
+        int n = ui -> spinBox ->value();
         double step = (maxX - minX) / (n - 1);
 
             if (ui -> chebyshevRadio->isChecked()) {
@@ -95,7 +94,6 @@ void MainWindow::updatePlot() {
     const QVector<QPointF>& controlPoints = model->getPoints();
     if (controlPoints.isEmpty()) return;
 
-    QVector<double> xGraph, yGraph; // Dane dla gładkiej linii
     QVector<double> xDots, yDots;   // Dane dla samych punktów kontrolnych
 
 
@@ -106,41 +104,24 @@ void MainWindow::updatePlot() {
         yDots << p.y();
     }
 
-    minY=0;
-    maxY=0;
-    double step = (maxX - minX) / 500.0;
+    interpolationDrawing draw;
     if (ui->lagrangeRadio->isChecked()) {
-        for (double x = minX; x <= maxX; x += step) {
-            xGraph << x;
-            yGraph << calculateLagrange(x, controlPoints);
-            minY = std::min(minY, yGraph.last());
-            maxY = std::max(maxY, yGraph.last());
-        }
+        draw = lagrangeInterpolation(minX, maxX, model->getPoints());
     }
     else if (ui->newtonRadio->isChecked()){
-        auto a = calculateNewtonCoefficients(controlPoints);
-        for (double x = minX; x <= maxX; x += step) {
-            xGraph << x;
-            yGraph << calculateNewton(x, controlPoints, a);
-            minY = std::min(minY, yGraph.last());
-            maxY = std::max(maxY, yGraph.last());
-        }
+        draw = newtonInterpolation(minX, maxX, model->getPoints());
     }
     else {
-        QVector<HermitePoint> hermitePoints = pointsToHermitePoints(controlPoints);
-        auto a = calculateHermiteCoefficients(hermitePoints);
-        for (double x = minX; x<=maxX; x+=step) {
-            xGraph << x;
-            yGraph << calculateHermiteValue(x, hermitePoints, a);
-            minY = std::min(minY, yGraph.last());
-            maxY = std::max(maxY, yGraph.last());
-        }
+        draw = hermiteInterpolation(minX, maxX, model->getPoints());
     }
+
+    minY = draw.minY;
+    maxY = draw.maxY;
 
     ui->plotterWidget->xAxis->setRange(minX - 1, maxX + 1);
     ui->plotterWidget->yAxis->setRange(minY - 2, maxY + 2);
 
-    ui->plotterWidget->graph(0)->setData(xGraph, yGraph); // Wykres ciągły
+    ui->plotterWidget->graph(0)->setData(draw.xValues, draw.yValues); // Wykres ciągły
     ui->plotterWidget->graph(1)->setData(xDots, yDots);   // Kropki w miejscach punktów
 
     ui->plotterWidget->replot();

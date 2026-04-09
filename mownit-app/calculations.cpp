@@ -3,6 +3,7 @@
 //
 #include <QVector>
 #include <QPointF>
+#include "interpolationDrawing.cpp"
 
 constexpr double h = 1e-14;
 struct HermitePoint {
@@ -140,4 +141,58 @@ QVector<double> chebyshev(const int n, const int k, const double a, const double
     }
     return result;
 
+}
+
+interpolationDrawing lagrangeInterpolation(const double minX, const double maxX, const QVector<QPointF>& points) {
+    interpolationDrawing result;
+    result.maxX = maxX;
+    result.minX = minX;
+    result.minY = -20;
+    result.maxY = 20;
+    const double step = (maxX - minX) / 500;
+    for (double x = minX; x < maxX; x+=step) {
+        double y = calculateLagrange(x, points);
+        result.xValues.push_back(x);
+        result.yValues.push_back(y);
+        result.minY = std::min(result.minY, y);
+        result.maxY = std::max(result.maxY, y);
+    }
+    return result;
+}
+
+interpolationDrawing newtonInterpolation(const double minX, const double maxX, const QVector<QPointF>& points) {
+    interpolationDrawing result;
+    const auto a = calculateNewtonCoefficients(points);
+    result.maxX = maxX;
+    result.minX = minX;
+    result.minY = -20;
+    result.maxY = 20;
+    const double step = (maxX - minX) / 500;
+    for (double x = minX; x < maxX; x+=step) {
+        double y = calculateNewton(x, points, a);
+        result.xValues.push_back(x);
+        result.yValues.push_back(y);
+        result.minY = std::min(result.minY, y);
+        result.maxY = std::max(result.maxY, y);
+    }
+    return result;
+}
+
+interpolationDrawing hermiteInterpolation(const double minX, const double maxX, const QVector<QPointF>& points) {
+    QVector<HermitePoint> hermitePoints = pointsToHermitePoints(points);
+    interpolationDrawing result;
+    const auto a = calculateHermiteCoefficients(hermitePoints);
+    result.maxX = maxX;
+    result.minX = minX;
+    result.minY = -20;
+    result.maxY = 20;
+    const double step = (maxX - minX) / 500;
+    for (double x = minX; x < maxX; x+=step) {
+        double y = calculateHermiteValue(x, hermitePoints, a);
+        result.xValues.push_back(x);
+        result.yValues.push_back(y);
+        result.minY = std::min(result.minY, y);
+        result.maxY = std::max(result.maxY, y);
+    }
+    return result;
 }

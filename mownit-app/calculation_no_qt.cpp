@@ -6,6 +6,10 @@
 #include <tuple>
 #include <math.h>
 
+/*Buduje tablicę ilorazów różnicowych
+ *@param points - węzły interpolacji
+ *@return - Wyniki z tablicy ilorazów różnicowych wykorzystywane we wzorze Newtona
+ */
 std::vector<double> calculateNewtonCoefficients(const std::vector<std::tuple<double, double>>points) {
     int n = points.size();
     std::vector<double> a(n);
@@ -24,6 +28,12 @@ std::vector<double> calculateNewtonCoefficients(const std::vector<std::tuple<dou
     return a;
 }
 
+/*Oblicza wartość wielomianu interpolującego metodą ilorazów różnicowych
+ *@param x - wspórzędna x
+ *@param points - węzły interpolacji
+ *@param a - współczynniki z tablicy ilorazów różnicowych
+ *@return wartość wielomianu interpolującego dla zadanego x
+ */
 double calculateNewton(double x, const std::vector<std::tuple<double, double>>& points, const std::vector<double>& a) {
     int n = points.size();
     if (n == 0) return 0.0;
@@ -34,6 +44,12 @@ double calculateNewton(double x, const std::vector<std::tuple<double, double>>& 
     return result;
 }
 
+
+/*Oblicza wartość wielomianu interpolującego metodą Lagrange'a
+ *@param x - współrzędna x
+ *@param points - węzły interpolacji
+ *@result wartość wielomianu interpolującego dla zadanego x
+ */
 double calculateLagrange(double x, const std::vector<std::tuple<double, double>>& points) {
     double result = 0.0;
     int n = points.size();
@@ -54,14 +70,19 @@ double calculateLagrange(double x, const std::vector<std::tuple<double, double>>
     return result;
 }
 
+/*@param x - wartość x dla której obliczamy f(x)
+ *@return f(x)
+ */
 double givenFunction(const double x) {
     return -2 * x * sin(2*(x-1));
 }
 /*
+ *Znajduje określoną liczbę miejsc zerowych wielomianu czebyszewa i przeskalowuje je do zadanego przedziału
  *@param n - ile miejsc zerowych zwrócić
  *@param k - stopień wielomianu czebyszewa
  *@param a - koniec przedziału
  *@param b - koniec przedziału
+ *@return wskaźnik do tablicy double w której są kolejne współrzędne x punktów
  */
 double* chebyshev(const int n, const int k, const double a, const double b) {
     double *result = new double[n];

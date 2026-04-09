@@ -1,0 +1,57 @@
+\addcontentsline{toc}{section}{Załączniki}
+
+\subsubsection*{Załącznik 1 - Kod umożliwiający etykietowanie bazy nagrań.}
+
+Poniżej przedstawiono kod demonstrujący działanie narzędzia do etykietowania.
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeorange}{rgb}{1,0.49,0}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.96}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegray},
+    keywordstyle=\color{codeorange},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codegreen},
+    basicstyle=\fontsize{10}{10}\selectfont\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    xleftmargin=10pt,
+}
+
+\lstset{style=mystyle}
+
+\begin{lstlisting}[language=Python, mathescape=true]
+# import bibliotek
+import os
+from pathlib import Path
+import random
+import soundfile as sf
+import sounddevice as sd
+
+
+with open("labels.txt", "a") as f:
+    for idx, filestem in enumerate(files):
+        # zapisanie numeru opisywanego pliku 
+        # do zmiennej "file_number"
+        file_number = int(len(done_files)) + int(idx) + 1
+        while True:
+            # zapisanie sciezki do opisywanego pliku 
+            # do zmiennej "filename"
+            filename = (
+                f"speech_dataset/{str(filestem)}.flac"
+            )
+
+          
+
+\end{lstlisting}

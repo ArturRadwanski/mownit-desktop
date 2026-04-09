@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1774530317.57278 "/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/main.tex" "build/main.pdf" "main" 1774530318.1661 0
-  "/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/main.tex" 1774530317.43787 14192 7888b8a6cdf70804c4e63598cfdc78cf ""
+["pdflatex"] 1774747191.66628 "/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/main.tex" "build/main.pdf" "main" 1774747192.26233 0
+  "/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/main.tex" 1774747191.51462 14240 ca952d87dd4039631da1ff17512ed0f9 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1772820570 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc" 1772820570 2005 f094775651a1386335c158fb632529f1 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc" 1772820570 2468 3f9e2f3088bcf5b581dfc367d71e7d95 ""
@@ -148,12 +148,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1772820570 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1773167331 5391761 abf78329ed836cdeddb87472dffb693d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1773167295 2340987 c97ca3785c9a18da6945a15ade910554 ""
-  "build/main.aux" 1774530318.12609 3168 550dc12caa7472ed1dda8fac2e7536f4 "pdflatex"
-  "build/main.out" 1774530318.12609 1179 ec2e66a46daae1c0577917d8b67d4741 "pdflatex"
+  "build/main.aux" 1774747192.21446 3168 550dc12caa7472ed1dda8fac2e7536f4 "pdflatex"
+  "build/main.out" 1774747192.21546 1179 ec2e66a46daae1c0577917d8b67d4741 "pdflatex"
   "img/agh_logo_z_nazwa.eps" 1774508090 304475 425b81389faf239f09f51cd5164ba256 ""
   "img/czebyszew.png" 1774525907.79966 44080 b049a311ba9b7e01094cbd60ac9a5317 ""
   "img/rownomierne.png" 1774525864.27965 34589 e4ec94b269d221f1045bb9f6474109d1 ""
-  "main.tex" 1774530317.43787 14192 7888b8a6cdf70804c4e63598cfdc78cf ""
+  "main.tex" 1774747191.51462 14240 ca952d87dd4039631da1ff17512ed0f9 ""
   "tex/00_preambule.tex" 1774522525.3521 954 11ea47790ced1ef17aaa43a77224a2e0 ""
   "tex/01_title_page.tex" 1774530026.88606 1223 556963abbfa06aec7f56023bc1853eec ""
   (generated)
