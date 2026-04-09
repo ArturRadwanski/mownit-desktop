@@ -2,7 +2,7 @@
 // Created by valleron on 3/19/26.
 //
 #include "calculation_no_qt.cpp"
-#include <cmath>
+#include <math.h>
 #include <tuple>
 #include <vector>
 #include <iostream>

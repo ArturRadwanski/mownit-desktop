@@ -1,7 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1774747191.66628 "/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/main.tex" "build/main.pdf" "main" 1774747192.26233 0
-  "/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/main.tex" 1774747191.51462 14240 ca952d87dd4039631da1ff17512ed0f9 ""
+["pdflatex"] 1774746883.09994 "/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/main.tex" "build/main.pdf" "main" 1774746883.76244 0
+  "/home/valleron/Documents/AGH/mownit-desktop/mownit-app/sprawko/main.tex" 1774746882.95945 16781 d41061cf235de2a79e2d26f6fa795e71 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1772820570 2900 1537cc8184ad1792082cd229ecc269f4 ""
+  "/usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc" 1772820570 3126 59f33ff3e396436ebc36f4e7b444d5c4 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc" 1772820570 2005 f094775651a1386335c158fb632529f1 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc" 1772820570 2468 3f9e2f3088bcf5b581dfc367d71e7d95 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc" 1772820570 1944 1845592c00bbe510359fd6887a83ff72 ""
@@ -31,6 +32,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1772820570 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/share/texmf-dist/fonts/type1/public/pl/plbx10.pfb" 1772820570 27050 0da5f310861fb948b3c5e6a53aad685b ""
   "/usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb" 1772820570 26733 3fa55bab1df289b642fa8cd9e61fb25f ""
+  "/usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb" 1772820570 22371 094f80a5a689f2eefc72bff87ecbc407 ""
   "/usr/share/texmf-dist/fonts/type1/public/pl/plmi10.pfb" 1772820570 29517 25a85f8c34479bb523ce1a802f64ac2b ""
   "/usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb" 1772820570 29704 5868c49c125729105d39d7e6e5638dd3 ""
   "/usr/share/texmf-dist/fonts/type1/public/pl/plmi6.pfb" 1772820570 30338 4bdf6a32e66b53760b57428a52eeec91 ""
@@ -148,12 +150,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1772820570 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1773167331 5391761 abf78329ed836cdeddb87472dffb693d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1773167295 2340987 c97ca3785c9a18da6945a15ade910554 ""
-  "build/main.aux" 1774747192.21446 3168 550dc12caa7472ed1dda8fac2e7536f4 "pdflatex"
-  "build/main.out" 1774747192.21546 1179 ec2e66a46daae1c0577917d8b67d4741 "pdflatex"
+  "build/main.aux" 1774746883.72245 3655 4f0977473569b61fddf411ae164785e2 "pdflatex"
+  "build/main.out" 1774746883.72345 1179 ec2e66a46daae1c0577917d8b67d4741 "pdflatex"
   "img/agh_logo_z_nazwa.eps" 1774508090 304475 425b81389faf239f09f51cd5164ba256 ""
   "img/czebyszew.png" 1774525907.79966 44080 b049a311ba9b7e01094cbd60ac9a5317 ""
+  "img/n20.png" 1774741267.27229 34821 ac5bcfc11223f75a00fe84c4cbff2ee1 ""
+  "img/n25.png" 1774741267.27329 47654 ade3e9a54edec2543299db7f8ba981f2 ""
   "img/rownomierne.png" 1774525864.27965 34589 e4ec94b269d221f1045bb9f6474109d1 ""
-  "main.tex" 1774747191.51462 14240 ca952d87dd4039631da1ff17512ed0f9 ""
+  "main.tex" 1774746882.95945 16781 d41061cf235de2a79e2d26f6fa795e71 ""
   "tex/00_preambule.tex" 1774522525.3521 954 11ea47790ced1ef17aaa43a77224a2e0 ""
   "tex/01_title_page.tex" 1774530026.88606 1223 556963abbfa06aec7f56023bc1853eec ""
   (generated)

@@ -280,6 +280,8 @@ INPUT /usr/share/texmf-dist/tex/latex/polski/omxplex.fd
 INPUT /usr/share/texmf-dist/tex/latex/polski/omxplex.fd
 INPUT /usr/share/texmf-dist/tex/latex/polski/omxplex.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/pl/plex10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/pl/plmi12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/pl/plsy10.tfm
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc
@@ -289,6 +291,17 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/pl/plmi8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/pl/plmi6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/pl/plsy8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/pl/plsy6.tfm
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc
+INPUT ./img/n20.png
+INPUT ./img/n20.png
+INPUT ./img/n20.png
+INPUT ./img/n20.png
+INPUT ./img/n20.png
+INPUT ./img/n25.png
+INPUT ./img/n25.png
+INPUT ./img/n25.png
+INPUT ./img/n25.png
+INPUT ./img/n25.png
 INPUT ./img/rownomierne.png
 INPUT ./img/rownomierne.png
 INPUT ./img/rownomierne.png
@@ -306,6 +319,7 @@ INPUT build/main.out
 INPUT build/main.out
 INPUT /usr/share/texmf-dist/fonts/type1/public/pl/plbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/pl/plmi10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/pl/plmi6.pfb
