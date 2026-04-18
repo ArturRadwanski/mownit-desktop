@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.12)  9 APR 2026 17:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  9 APR 2026 19:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/valleron/CLionProjects/mownit-app/sprawko/main.tex
-(/home/valleron/CLionProjects/mownit-app/sprawko/main.tex
+**/home/valleron/CLionProjects/mownit-app/zad2b/sprawko.tex
+(/home/valleron/CLionProjects/mownit-app/zad2b/sprawko.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -147,6 +147,13 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen159
 \Gm@layoutvoffset=\dimen160
 \Gm@dimlist=\toks21
+) (/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count288
+\float@exts=\toks22
+\float@box=\box53
+\@float@everytoks=\toks23
+\@floatcapt=\box54
 ) (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -179,16 +186,16 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count288
+\c@section@level=\count289
 ) (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count289
+\etb@tempcnta=\count290
 ) (/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen161
-\Hy@linkcounter=\count290
-\Hy@pagecounter=\count291
+\Hy@linkcounter=\count291
+\Hy@pagecounter=\count292
  (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -196,7 +203,7 @@ Now handling font encoding PD1 ...
 ) (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count292
+\Hy@SavedSpaceFactor=\count293
  (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -209,7 +216,7 @@ Package hyperref Info: Plain pages OFF on input line 4216.
 Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
-\c@Hy@tempcnt=\count293
+\c@Hy@tempcnt=\count294
 LaTeX Info: Redefining \url on input line 4807.
 \XeTeXLinkMargin=\dimen162
  (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
@@ -217,7 +224,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count294
+\Fld@menulength=\count295
 \Field@Width=\dimen163
 \Fld@charsize=\dimen164
 Package hyperref Info: Hyper figures OFF on input line 6084.
@@ -227,15 +234,15 @@ Package hyperref Info: backreferencing OFF on input line 6099.
 Package hyperref Info: Link coloring OFF on input line 6104.
 Package hyperref Info: Link coloring with OCG OFF on input line 6109.
 Package hyperref Info: PDF/A mode OFF on input line 6114.
-\Hy@abspage=\count295
-\c@Item=\count296
-\c@Hfootnote=\count297
+\Hy@abspage=\count296
+\c@Item=\count297
+\c@Hfootnote=\count298
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
-\Fld@listcount=\count298
-\c@bookmark@seq@number=\count299
+\Fld@listcount=\count299
+\c@bookmark@seq@number=\count300
  (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
  (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -254,11 +261,11 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 Package: fvextra 2026/02/25 v1.14.0 fvextra - extensions and patches for fancyvrb
  (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count300
+\FV@CodeLineNo=\count301
 \FV@InFile=\read3
-\FV@TabBox=\box53
-\c@FancyVerbLine=\count301
-\FV@StepNumber=\count302
+\FV@TabBox=\box55
+\c@FancyVerbLine=\count302
+\FV@StepNumber=\count303
 \FV@OutFile=\write3
 ) (/usr/share/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
@@ -266,68 +273,61 @@ Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbat
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
 )) (/usr/share/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2026/02/16 line numbers on paragraphs v5.7
-\linenopenalty=\count303
-\output=\toks22
-\linenoprevgraf=\count304
+\linenopenalty=\count304
+\output=\toks24
+\linenoprevgraf=\count305
 \linenumbersep=\dimen165
 \linenumberwidth=\dimen166
-\c@linenumber=\count305
-\c@pagewiselinenumber=\count306
-\c@LN@truepage=\count307
-\c@internallinenumber=\count308
-\c@internallinenumbers=\count309
+\c@linenumber=\count306
+\c@pagewiselinenumber=\count307
+\c@LN@truepage=\count308
+\c@internallinenumber=\count309
+\c@internallinenumbers=\count310
 \quotelinenumbersep=\dimen167
 \bframerule=\dimen168
 \bframesep=\dimen169
-\bframebox=\box54
+\bframebox=\box56
 )
-\c@FancyVerbWriteLine=\count310
-\c@FancyVerbBufferLine=\count311
-\c@FV@TrueTabGroupLevel=\count312
-\c@FV@TrueTabCounter=\count313
-\FV@TabBox@Group=\box55
-\FV@bgcolorstructbox=\box56
+\c@FancyVerbWriteLine=\count311
+\c@FancyVerbBufferLine=\count312
+\c@FV@TrueTabGroupLevel=\count313
+\c@FV@TrueTabCounter=\count314
+\FV@TabBox@Group=\box57
+\FV@bgcolorstructbox=\box58
 \FV@TmpLength=\skip52
-\c@FV@HighlightLinesStart=\count314
-\c@FV@HighlightLinesStop=\count315
-\FV@LoopCount=\count316
-\FV@NCharsBox=\box57
+\c@FV@HighlightLinesStart=\count315
+\c@FV@HighlightLinesStop=\count316
+\FV@LoopCount=\count317
+\FV@NCharsBox=\box59
 \FV@BreakIndent=\dimen170
-\FV@BreakIndentNChars=\count317
+\FV@BreakIndentNChars=\count318
 \FV@BreakSymbolSepLeft=\dimen171
-\FV@BreakSymbolSepLeftNChars=\count318
+\FV@BreakSymbolSepLeftNChars=\count319
 \FV@BreakSymbolSepRight=\dimen172
-\FV@BreakSymbolSepRightNChars=\count319
+\FV@BreakSymbolSepRightNChars=\count320
 \FV@BreakSymbolIndentLeft=\dimen173
-\FV@BreakSymbolIndentLeftNChars=\count320
+\FV@BreakSymbolIndentLeftNChars=\count321
 \FV@BreakSymbolIndentRight=\dimen174
-\FV@BreakSymbolIndentRightNChars=\count321
-\c@FancyVerbLineBreakLast=\count322
-\FV@LineBox=\box58
-\FV@LineIndentBox=\box59
-\c@FV@BreakBufferDepth=\count323
+\FV@BreakSymbolIndentRightNChars=\count322
+\c@FancyVerbLineBreakLast=\count323
+\FV@LineBox=\box60
+\FV@LineIndentBox=\box61
+\c@FV@BreakBufferDepth=\count324
 \FV@LineWidth=\dimen175
 ) (/usr/share/texmf-dist/tex/latex/latex2pydata/latex2pydata.sty
 Package: latex2pydata 2026/02/25 v0.7.0 latex2pydata - write data to file in Python literal format
 ) (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks23
-\pgfkeys@temptoks=\toks24
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
  (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks25
+\pgfkeys@tmptoks=\toks27
 ))) (/usr/share/texmf-dist/tex/latex/pgfopts/pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-\pgfopts@list@add@a@toks=\toks26
-\pgfopts@list@add@b@toks=\toks27
+\pgfopts@list@add@a@toks=\toks28
+\pgfopts@list@add@b@toks=\toks29
 ) (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
-) (/usr/share/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count324
-\float@exts=\toks28
-\float@box=\box60
-\@float@everytoks=\toks29
-\@floatcapt=\box61
 )
 \c@minted@FancyVerbLineTemp=\count325
 \@float@every@listing=\toks30
@@ -787,32 +787,32 @@ Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty p
 ) (./tex/01_title_page.tex)) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count382
-) (out/main.aux
+) (out/sprawko.aux
 Package babel Info: 'polish' activates 'polish' shorthands.
 (babel)             Reported on input line 8.
 )
-\openout1 = `main.aux'.
+\openout1 = `sprawko.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count383
@@ -861,10 +861,10 @@ LaTeX Font Info:    ... okay on input line 10.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 10.
-(out/main.out) (out/main.out)
+Package hyperref Info: Link coloring OFF on input line 9.
+(out/sprawko.out) (out/sprawko.out)
 \@outlinefile=\write4
-\openout4 = `main.out'.
+\openout4 = `sprawko.out'.
 
  (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
@@ -875,103 +875,76 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 \c@lstlisting=\count389
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-Package epstopdf Info: Source file: <img/agh_logo_z_nazwa.eps>
-(epstopdf)                    date: 2026-03-26 17:45:38
-(epstopdf)                    size: 304475 bytes
-(epstopdf)             Output file: <img/agh_logo_z_nazwa-eps-converted-to.pdf>
-(epstopdf)                    date: 2026-03-26 17:45:38
-(epstopdf)                    size: 9231 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/agh_logo_z_nazwa-eps-converted-to.pdf img/agh_logo_z_nazwa.eps>
-(epstopdf)             \includegraphics on input line 12.
-Package epstopdf Info: Output file is already uptodate.
 <img/agh_logo_z_nazwa-eps-converted-to.pdf, id=40, 323.2075pt x 107.40125pt>
 File: img/agh_logo_z_nazwa-eps-converted-to.pdf Graphic file (type pdf)
 <use img/agh_logo_z_nazwa-eps-converted-to.pdf>
-Package pdftex.def Info: img/agh_logo_z_nazwa-eps-converted-to.pdf  used on input line 12.
+Package pdftex.def Info: img/agh_logo_z_nazwa-eps-converted-to.pdf  used on input line 11.
 (pdftex.def)             Requested size: 321.09592pt x 106.69783pt.
-LaTeX Font Info:    Trying to load font information for OT4+phv on input line 12.
-LaTeX Font Info:    No file OT4phv.fd. on input line 12.
+LaTeX Font Info:    Trying to load font information for OT4+phv on input line 11.
+LaTeX Font Info:    No file OT4phv.fd. on input line 11.
 
 
 LaTeX Font Warning: Font shape `OT4/phv/m/n' undefined
-(Font)              using `OT4/cmr/m/n' instead on input line 12.
+(Font)              using `OT4/cmr/m/n' instead on input line 11.
 
 
 LaTeX Font Warning: Font shape `OT4/phv/b/n' undefined
-(Font)              using `OT4/phv/m/n' instead on input line 12.
+(Font)              using `OT4/phv/m/n' instead on input line 11.
 
 [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc} <./img/agh_logo_z_nazwa-eps-converted-to.pdf>]
-LaTeX Font Info:    Trying to load font information for OML+plm on input line 38.
+LaTeX Font Info:    Trying to load font information for OML+plm on input line 30.
  (/usr/share/texmf-dist/tex/latex/polski/omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 38.
+LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 30.
  (/usr/share/texmf-dist/tex/latex/polski/omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Trying to load font information for OMX+plex on input line 38.
+LaTeX Font Info:    Trying to load font information for OMX+plex on input line 30.
  (/usr/share/texmf-dist/tex/latex/polski/omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 38.
+(Font)              <10> on input line 30.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 38.
+(Font)              <7> on input line 30.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <5> on input line 38.
+(Font)              <5> on input line 30.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <14.4> on input line 65.
+(Font)              <14.4> on input line 56.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.65 ...um_{i}^{k}(P(x_{i}) - f(x_{i}))^{2}}}{k}\]
-                                                   [1{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc}]
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 85.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 85.
- [2{/usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc}]
-<img/n20.png, id=75, 602.25pt x 451.6875pt>
-File: img/n20.png Graphic file (type png)
-<use img/n20.png>
-Package pdftex.def Info: img/n20.png  used on input line 156.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [3]
-<img/n25.png, id=83, 602.25pt x 451.6875pt>
-File: img/n25.png Graphic file (type png)
-<use img/n25.png>
-Package pdftex.def Info: img/n25.png  used on input line 163.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [4 <./img/n20.png> <./img/n25.png>]
-<img/rownomierne.png, id=94, 602.25pt x 451.6875pt>
-File: img/rownomierne.png Graphic file (type png)
-<use img/rownomierne.png>
-Package pdftex.def Info: img/rownomierne.png  used on input line 174.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
-<img/czebyszew.png, id=95, 602.25pt x 451.6875pt>
-File: img/czebyszew.png Graphic file (type png)
-<use img/czebyszew.png>
-Package pdftex.def Info: img/czebyszew.png  used on input line 181.
+l.56 ...um_{i}^{k}(P(x_{i}) - f(x_{i}))^{2}}}{k}\]
+                                                   [1{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc}] [2{/usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc}] [3]
+<img/n11Lagrange.png, id=80, 602.25pt x 451.6875pt>
+File: img/n11Lagrange.png Graphic file (type png)
+<use img/n11Lagrange.png>
+Package pdftex.def Info: img/n11Lagrange.png  used on input line 150.
 (pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 186.
+(Font)              <8> on input line 151.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <6> on input line 151.
+<img/n11Hermite.png, id=82, 602.25pt x 451.6875pt>
+File: img/n11Hermite.png Graphic file (type png)
+<use img/n11Hermite.png>
+Package pdftex.def Info: img/n11Hermite.png  used on input line 157.
+(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
+ [4 <./img/n11Lagrange.png>]
+<img/n6Hermite.png, id=92, 602.25pt x 451.6875pt>
+File: img/n6Hermite.png Graphic file (type png)
+<use img/n6Hermite.png>
+Package pdftex.def Info: img/n6Hermite.png  used on input line 164.
+(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
+ [5 <./img/n11Hermite.png> <./img/n6Hermite.png>] [6]
+runsystem(latexminted cleantemp  --timestamp 20260409195757 3D9010D8C5E9B9BA0C57D5DEEF5EE839)...executed safely (allowed).
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 186.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 186.
-
-[5 <./img/rownomierne.png> <./img/czebyszew.png>] [6] [7]
-runsystem(latexminted cleantemp  --timestamp 20260409170107 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
-
- (out/main.aux)
+ (out/sprawko.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -980,22 +953,22 @@ L3 programming layer <2026-01-19>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EC2E66A46DAAE1C0577917D8B67D4741;1179.
+Package rerunfilecheck Info: File `sprawko.out' has not changed.
+(rerunfilecheck)             Checksum: 14C0719E6CD6207D92E50C6E2A4E8900;1259.
  ) 
 Here is how much of TeX's memory you used:
- 20796 strings out of 469480
- 386725 string characters out of 5470003
- 945315 words of memory out of 5000000
- 49103 multiletter control sequences out of 15000+600000
- 639864 words of font info for 70 fonts, out of 8000000 for 9000
+ 20774 strings out of 469480
+ 386631 string characters out of 5470004
+ 946351 words of memory out of 5000000
+ 49091 multiletter control sequences out of 15000+600000
+ 639203 words of font info for 68 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 80i,9n,86p,548b,773s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on out/main.pdf (8 pages, 275256 bytes).
+ 80i,9n,86p,549b,773s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on out/sprawko.pdf (7 pages, 213837 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

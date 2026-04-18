@@ -26,12 +26,9 @@
 \section{Zadanie}
 \subsection{Cel}
 Celem zadania było zbadanie jak rozmieszczenie węzłów interpolacji wpływa na dokładność przybliżenia oraz porównanie podejścia Lagrange'a oraz Hermite'a.
-na podstawie funkcji 
-% \begin{center}
-% \begin{large}
-    \[f(x) = -2x\sin(2(x-1))\hspace{5ex}  x\in[-2\pi+1,3\pi+1]\]
-% \end{large}
-% \end{center}
+na podstawie funkcji.
+\[f(x) = -2x\sin(2(x-1))\hspace{5ex}  x\in[-2\pi+1,3\pi+1]\]
+
 
 \subsection{Realizacja}
 
@@ -148,35 +145,40 @@ węzłów interpolacji zgodne z zerami wielomianu Czebyszewa niweluje ten efekt 
 Gdy $n=11 \lor n=6$ w przypadku rozłożenia równomiernego, wszystkie węzły interpolacji są w miejscach zerowych funkcji. Metoda Lagrange'a zwraca nam wtedy Jako
 przybliżenie funkcję $f(x) \equiv 0$ (rys. \ref{fig:lagrange_n_11}). Metoda Hermite'a natomiast dzięki temu, że bierze pod uwagę również nachylenie funkcji,
 zwraca wielomian stopnia naturalnego (rys. \ref{fig:hermite_n_11} i \ref{fig:hermite_n_6}). 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{img/n11Lagrange.png}
     \caption{Interpolacja Lagrange'a dla $n=11$}
     \label{fig:lagrange_n_11}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{img/n11Hermite.png}
     \caption{Interpolacja Hermite'a dla $n=11$}
     \label{fig:hermite_n_11}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{img/n6Hermite.png}
     \caption{Interpolacja Hermite'a dla $n=6$}
     \label{fig:hermite_n_6}
 \end{figure}
 
+
 \subsection{Stabilność numeryczna}
-\begin{table}[htbp]
+
+Już w tabeli \ref{tab:max_full_runge} można było zobaczyć, że dla $n=30$ błąd maksymalny zaczyna rosnąć. Dla większej liczby
+węzłów interpolacji metoda jest jeszcze mniej stabilna. Jak moża zaobserwować w tabeli \ref{tab:high_n_comparison} błędy
+numeryczne kaskadują znacznie szybciej dla metody Hermite'a niż dla metody Lagrange'a, niezależnie od tego czy porównujemy
+metody dla takiej samej liczby węzłow, czy dla takiego samego stopnia wielomianu.
+
+
+\begin{table}[H]
 \centering
 
-\caption{Porównanie błędu maksymalnego Lagrange'a i Hermite'a dla dużej liczby węzłów.}
-Jak moża zaobserwować w tabeli \ref{}
-\label{tab:high_n_comparison}
-\begin{tabular}{@{}ccccc@{}}
+\begin{tabular}{ccccc}
 \toprule
 \textbf{n} & \textbf{Lagrange (Równ.)} & \textbf{Hermite (Równ.)} & \textbf{Lagrange (Czeb.)} & \textbf{Hermite (Czeb.)} \\ \midrule
 40 & 5.75e-06 & 1.85e+03 & 1.35e-11 & 3.05e+05 \\
@@ -186,7 +188,15 @@ Jak moża zaobserwować w tabeli \ref{}
 80 & 7.69e+05 & 8.97e+40 & 4.62e-14 & 1.35e+46 \\
 90 & 7.34e+08 & 1.03e+50 & 5.33e-14 & 7.73e+55 \\ \bottomrule
 \end{tabular}
+
+
+\caption{Porównanie błędu maksymalnego Lagrange'a i Hermite'a dla dużej liczby węzłów.}
+
+\label{tab:high_n_comparison}
 \end{table}
 
 \section{Wnioski}
+W zastosowaniach praktycznych metoda Hermite'a będzie zwykle lepsza jeżeli jesteśmy w stanie obliczyć pochodną funkcji interpolowanej z dużą dokładnością. 
+Błędy numeryczne nie są znaczne dla stopni wielomianów poniżej 30 w żadnej z metod. Metoda Lagrange'a z z kolei będzie lepsza jeżeli funkcja
+nie jest różniczkowalna, lub obliczenie wartości pochodnej byłoby obarczone błędem pomiarowym lub numerycznym.
 \end{document}

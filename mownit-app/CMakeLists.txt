@@ -38,11 +38,15 @@ target_link_libraries(main
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qcustomplot-source)
 
-
-
 add_executable(obliczenia
         tests_main.cpp
 )
 
+add_executable(spline Spline-obliczenia.cpp)
 
-
+target_link_libraries(spline
+        Qt::Core
+        Qt::Gui
+        Qt::Widgets
+        Qt::PrintSupport
+)

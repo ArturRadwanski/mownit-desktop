@@ -15,6 +15,10 @@ struct HermitePoint {
         : x(_x), y(_y), dy(_dy) {}
 };
 
+struct SplineSegment {
+    double a, b, c, d, x_start;
+};
+
 double givenDifferential(const double x) {
     return -2 * (sin(2*(x-1)) + x * 2 * cos(2*(x-1)));
 }
@@ -175,4 +179,97 @@ double* chebyshev(const int n, const int k, const double a, const double b) {
     }
     return result;
 
+}
+
+std::vector<SplineSegment> calculateNaturalSpline(const std::vector<std::tuple<double, double>>& points) {
+    int n = points.size();
+    if (n < 3) return {};
+
+    int m = n - 1;
+    std::vector<double> h(m);
+    for (int i = 0; i < m; ++i) {
+        h[i] = std::get<1>(points[i+1]) - std::get<1>(points[i]);
+    }
+
+    // Układ równań trójdiagonalnych dla sigm (drugich pochodnych)
+    // Macierz o rozmiarze (n-2) x (n-2), bo sigma[0] i sigma[n-1] są równe 0
+    int sz = n - 2;
+    std::vector<double> a_diag(sz), b_sub(sz), c_sup(sz), d_vec(sz);
+    std::vector<double> sigmas(n, 0.0); // Domyślnie sigmas[0] = 0 i sigmas[n-1] = 0
+
+    for (int i = 0; i < sz; ++i) {
+        int idx = i + 1; //
+        double diffNext = (std::get<1>(points[idx+1]) - std::get<1>(points[idx])) / h[idx];
+        double diffPrev = (std::get<1>(points[idx]) - std::get<1>(points[idx-1])) / h[idx-1];
+
+        a_diag[i] = 2.0 * (h[idx-1] + h[idx]);
+        if (i > 0) b_sub[i] = h[idx-1];
+        if (i < sz - 1) c_sup[i] = h[idx];
+        d_vec[i] = 6.0 * (diffNext - diffPrev);
+    }
+
+    d_vec[0] -= h[0] * 0;           // TODO ustawianie sigm
+    d_vec[sz-1] -= h[m-1] * 10;
+    for (int i = 1; i < sz; ++i) {
+        double m = b_sub[i] / a_diag[i-1];
+        a_diag[i] -= m * c_sup[i-1];
+        d_vec[i] -= m * d_vec[i-1];
+    }
+
+    // Wyznaczanie sigm
+    std::vector<double> temp_sigmas(sz);
+    temp_sigmas[sz-1] = d_vec[sz-1] / a_diag[sz-1];
+    for (int i = sz - 2; i >= 0; --i) {
+        temp_sigmas[i] = (d_vec[i] - c_sup[i] * temp_sigmas[i+1]) / a_diag[i];
+    }
+
+    // Przepisanie do pełnego wektora sigm
+    for (int i = 0; i < sz; ++i) sigmas[i+1] = temp_sigmas[i];
+
+    sigmas[0] = 0.0; //TODO sigmas
+    sigmas[sz+1]=10.0;
+
+    // Obliczanie współczynników a, b, c, d dla każdego przedziału
+    std::vector<SplineSegment> segments(m);
+    for (int i = 0; i < m; ++i) {
+        segments[i].x_start = std::get<0>(points[i]);
+        segments[i].a = std::get<1>(points[i]);
+        segments[i].b = (std::get<1>(points[i+1]) - std::get<1>(points[i])) / h[i] - h[i] * (sigmas[i+1] + 2.0 * sigmas[i]) / 6.0;
+        segments[i].c = sigmas[i] / 2.0;
+        segments[i].d = (sigmas[i+1] - sigmas[i]) / (6.0 * h[i]);
+    }
+
+    return segments;
+}
+
+double getSplineValue(double x, const std::vector<SplineSegment>& segments) {
+    int n = segments.size();
+    if (n == 0) return 0;
+
+
+    // Znalezienie odpowiedniego przedziału
+    int idx = 0;
+    if (x <= segments[0].x_start) {
+        idx = 0;
+    } else if (x >= segments[n-1].x_start) {
+        idx = n - 1;
+    } else {
+        // Wyszukiwanie binarne
+        int low = 0, high = n - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (segments[mid].x_start <= x) {
+                idx = mid;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+    }
+
+    double dx = x - segments[idx].x_start;
+    return segments[idx].a +
+           segments[idx].b * dx +
+           segments[idx].c * dx * dx +
+           segments[idx].d * dx * dx * dx;
 }

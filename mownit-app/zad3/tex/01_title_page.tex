@@ -1,0 +1,42 @@
+\newcommand{\setSupervisor}[1]{
+    \newcommand{\supervisor}{#1}
+}
+\newcommand{\setFaculty}[1]{
+    \newcommand{\faculty}{#1}
+}
+\newcommand{\setMajor}[1]{
+    \newcommand{\major}{#1}
+}
+
+\newcommand{\setDepartment}[1]{
+    \newcommand{\department}{#1}
+}
+
+\newcommand{\setReviewer}[1]{
+    \newcommand{\reviewer}{#1}
+}
+
+\makeatletter
+\renewcommand{\maketitle}{\begin{titlepage}
+        \includegraphics[height=37.5mm]{img/agh_logo_z_nazwa-eps-converted-to.pdf}\\
+        \rule{30mm}{0pt}
+        {\large \textsf{\department}}\\
+        \rule{\textwidth}{3pt}\\
+        \rule[2ex]
+        {\textwidth}{1pt}\\
+        \vspace{7ex}
+        \begin{center}
+            {\LARGE \bf \textsf{Sprawozdanie}}\\
+            \vspace{13ex}
+            % --------------------------- IMIE I~NAZWISKO -------------------------------
+            {\bf \Large \textsf{\@author}}\\
+            \vspace{3ex}
+            %% ------------------------ TYTUL PRACY --------------------------------------
+            {\bf \huge \textsf{\@title}}\\
+            \vspace{14ex}
+            %% ------------------------ OPIEKUN PRACY ------------------------------------
+            {\large \bf \textsf{\supervisor}}\\
+        \end{center}
+    \end{titlepage}%
+}
+\makeatother

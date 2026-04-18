@@ -22,17 +22,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     ui->plotterWidget->graph(1)->setLineStyle(QCPGraph::lsNone); // Brak linii dla punktów
     ui->plotterWidget->graph(1)->setScatterStyle(QCPScatterStyle::ssCircle);
-    //connect(model, &PointsModel::dataChanged, this, &MainWindow::updatePlot);
+    ui->doubleSpinBoxStart -> setMinimum(-100.0);
+    ui->doubleSpinBoxEnd -> setMinimum(-100.0);
     start = -2 * M_PI + 1;
     end = 3 * M_PI +1;
-    step = (end - start) / 99;
+    step = (end - start) / 999;
     minX = start;
     maxX = end;
     minY = start;
     maxY = start;
 
     QVector<double> xGraph, yGraph;
-    for (int i=0;i<100;i++) {
+    for (int i=0;i<1000;i++) {
         xGraph << start + (i * step);
         yGraph << givenFunction(xGraph.last());
         minX = std::min(minX, xGraph.last());
@@ -47,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->plotterWidget->graph(2)->setData(xGraph, yGraph);
     ui->plotterWidget->legend->setVisible(true);
 
-    ui->plotterWidget->legend->setFont(QFont("Helvetica", 9));
+    ui->plotterWidget->legend->setFont(QFont("Helvetica", 18));
     ui->plotterWidget->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignLeft | Qt::AlignBottom);
 
 
@@ -89,6 +90,12 @@ void MainWindow::updatePlot() {
 
         }
         model->newPoints(*points);
+        // Source - https://stackoverflow.com/a/34190094
+        // Posted by frogatto, modified by community. See post 'Timeline' for change history
+        // Retrieved 2026-04-16, License - CC BY-SA 4.0
+
+        ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
         delete points;
     }
     const QVector<QPointF>& controlPoints = model->getPoints();
@@ -110,6 +117,12 @@ void MainWindow::updatePlot() {
     }
     else if (ui->newtonRadio->isChecked()){
         draw = newtonInterpolation(minX, maxX, model->getPoints());
+    }
+    else if (ui->splainRadio->isChecked()) {
+        draw = spilineInterpolation(minX, maxX, model->getPoints(), ui->doubleSpinBoxStart->value(), ui->doubleSpinBoxEnd->value(), ui->notAKnotCheckbox->isChecked());
+    }
+    else if (ui->quadraticRadio->isChecked()) {
+        draw = quadraticInterpolation(minX, maxX, model->getPoints(), ui->doubleSpinBoxStart->value(), ui->notAKnotCheckbox->isChecked());
     }
     else {
         draw = hermiteInterpolation(minX, maxX, model->getPoints());
